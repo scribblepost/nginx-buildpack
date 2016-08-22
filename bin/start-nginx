@@ -34,7 +34,8 @@ echo 'buildpack=nginx at=logs-initialized'
 	#E.g. bin/start-nginx bundle exec unicorn -c config/unicorn.rb
         COMMAND=${@:$n}
 	echo "buildpack=nginx at=start-app cmd=$COMMAND"
-	$COMMAND
+	#$COMMAND
+	PORT=3000 node ${HOME}/build/bundle/main.js
 	echo 'app' >$psmgr
 ) &
 

@@ -1,9 +1,4 @@
 #!/usr/bin/env bash
 # bin/detect <build-dir>
-if [[ "${DYNO}" =~ ^web\..*$ ]]; then
-    echo 'nginx-buildpack';
-    exit 0;
-else
-    echo "Not deploying nginx for non-web dynos";
-    exit 1;
-fi
+echo 'nginx-buildpack'
+exit 0

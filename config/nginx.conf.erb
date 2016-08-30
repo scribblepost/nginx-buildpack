@@ -32,6 +32,8 @@ http {
 	#include mime.types;
 	default_type application/octet-stream;
 	sendfile on;
+	
+	client_max_body_size 10M;
 
 	upstream app_server {
 		server unix:/tmp/nginx.socket fail_timeout=0;

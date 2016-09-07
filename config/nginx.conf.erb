@@ -5,8 +5,10 @@ worker_processes <%= ENV['NGINX_WORKERS'] || 4 %>;
 events {
 	use epoll;
 	accept_mutex on;
-	worker_connections 1024;
+	worker_connections 19000;
 }
+
+worker_rlimit_nofile    20000;
 
 http {
 	gzip on;
